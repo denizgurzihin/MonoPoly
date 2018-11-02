@@ -2,7 +2,7 @@
 ## MONOPOLY GAME
 
 Deniz Arda Gürzihin  
-Mustafa Abdullah Hakkoz 150117509  
+150117509 Mustafa Abdullah Hakkoz  
 Erman Kundakçıoğlu  
 
 
