@@ -2,8 +2,9 @@
 ## MONOPOLY GAME
 
 Deniz Arda Gürzihin  
-Mustafa Abdullah Hakkoz  
+Mustafa Abdullah Hakkoz 150117509
 Erman Kundakçıoğlu  
+
 
 
 ## first iteration: 02.11.2018
