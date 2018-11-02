@@ -1,5 +1,5 @@
 # cse3063f18p1_dagurzihin_mahakkoz_ekundakcioglu
-## Monopoly Game
+## MONOPOLY GAME
 
 Deniz Arda Gürzihin
 
@@ -8,7 +8,7 @@ Mustafa Abdullah Hakkoz
 Erman Kundakçıoğlu
 
 
-## FIRST ITERATION:02.11.2018
+## first iteration: 02.11.2018
 
 **Main class:** [Monopoly.java](https://github.com/denizgurzihin/cse3063f18p1_dagurzihin_mahakkoz_ekundakcioglu/blob/master/Monopoly.java)
 
