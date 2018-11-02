@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Monopoly {
-    private static final int TOTAL_ROUNDS = 10;
+    private static final int TOTAL_ROUNDS = 50;
 
 
     public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class Monopoly {
                 System.err.println("Error: Number too large.");
                 continue;
             }
-            if(totalPlayer > 8) {
+            if(totalPlayer > 8 || totalPlayer< 2) {
                 System.err.println("Error: Invalid player count.");
             }
         }
@@ -41,8 +41,21 @@ public class Monopoly {
         for (int i=0; i<TOTAL_ROUNDS; i++){
             System.out.println(" ");
             System.out.println("ROUND: " + (i+1));
-            for(int j=0; j<totalPlayer;j++)
+
+
+            for(int j=0; j<totalPlayer;j++) {
+                int oldLocation, newLocation;
+
+                oldLocation =  players.get(j).getLocation().getIndex();
+                //playerın içinden artttırmayı dene.
                 players.get(j).playTurn();
+                newLocation =  players.get(j).getLocation().getIndex();
+
+                if(oldLocation >= newLocation){
+                    int x=500;
+                    players.get(j).increaseMoney(x);
+                }
+            }
         }
 
     }
