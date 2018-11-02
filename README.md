@@ -3,7 +3,7 @@
 
 Deniz Arda Gürzihin  
 150117509 Mustafa Abdullah Hakkoz  
-Erman Kundakçıoğlu  
+Erman Kundakcıoğlu  
 
 
 
