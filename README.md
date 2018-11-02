@@ -9,7 +9,7 @@ Erman Kundakçıoğlu
 
 ## first iteration: 02.11.2018
 
-- **Requirement Analysis Document:  
+- **Requirement Analysis Document:**  
 - **Domain Model:**  
 - **UML Class Diagram:**  
 - **UML Sequence Diagram:**  
