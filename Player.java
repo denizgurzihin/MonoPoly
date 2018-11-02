@@ -1,7 +1,11 @@
+
+
 public class Player {
     private String name;
     private Pawn pawn;
     private Die[] dice;
+
+    //private int money;
 
     public Player(String name, Die[] dice, Board board){
         this.setName(name);
@@ -36,5 +40,7 @@ public class Player {
     public void setName(String name){
         this.name = name;
     }
+
+
 
 }
