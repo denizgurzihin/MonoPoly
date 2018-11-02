@@ -3,8 +3,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Monopoly {
-    private static final int TOTAL_ROUNDS = 50;
-
 
     public static void main(String[] args) {
         Board board = new Board();
@@ -31,33 +29,27 @@ public class Monopoly {
         }
 
 
-        List<Player> players = new ArrayList<>(totalPlayer);
+        ArrayList<Player> players = new ArrayList<>(totalPlayer);
         for(int i=0; i<totalPlayer;i++){
             System.out.print("Please enter a player name : ");
             Player newPlayer = new Player(scanner.next(), dice, board);
             players.add(newPlayer);
         }
 
-        for (int i=0; i<TOTAL_ROUNDS; i++){
-            System.out.println(" ");
-            System.out.println("ROUND: " + (i+1));
 
 
-            for(int j=0; j<totalPlayer;j++) {
-                int oldLocation, newLocation;
-
-                oldLocation =  players.get(j).getLocation().getIndex();
-                //playerın içinden artttırmayı dene.
+        ArrayList<Player> currentPlayers = (ArrayList<Player>) players.clone();
+        int roundCounter=0;
+        while(currentPlayers.size() >= 2){
+            System.out.println(" \n");
+            System.out.println("ROUND: " + (roundCounter++));
+            for(int j=0; j<totalPlayer && players.get(j).getStatus(); j++) {
                 players.get(j).playTurn();
-                newLocation =  players.get(j).getLocation().getIndex();
-
-                if(oldLocation >= newLocation){
-                    int x=500;
-                    players.get(j).increaseMoney(x);
-                }
+                currentPlayers.removeIf(p -> p.getStatus() == false);
             }
         }
 
+        currentPlayers.forEach(p -> System.out.print("\n********** WINNER IS : " + p.getName() + "!!! **********"));
     }
 
 

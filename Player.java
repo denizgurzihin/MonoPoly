@@ -4,18 +4,19 @@ public class Player {
     private String name;
     private Pawn pawn;
     private Die[] dice;
-
     private int money;
+    private boolean isActive;
 
     public Player(String name, Die[] dice, Board board){
         this.setName(name);
         this.dice = dice;
         this.pawn = new Pawn(board);
         this.money = 1500;
+        this.isActive = true;
     }
 
     public void playTurn(){
-        System.out.println(name + " playing his turn...");
+        System.out.println("\n" + name + " is playing his turn...");
 
         dice[0].rollDice();
         int value1=dice[0].getValue();
@@ -28,7 +29,24 @@ public class Player {
         Square newLocation = pawn.move(oldLocation, value1+value2);
         this.pawn.setLocation(newLocation);
         System.out.println(" New location is: " + getLocation().getIndex());
-        System.out.println(" "+getName()+" has "+ getMoney()+" amount of money \n");
+
+        if(oldLocation.getIndex() >= newLocation.getIndex()) {
+            increaseMoney(200);
+        }
+
+        if(newLocation.getName()=="Income Tax"){
+            decreaseMoney(1500);
+        }
+
+        if(newLocation.getName()=="Super Tax"){
+            decreaseMoney(1000);
+        }
+        System.out.println(" " + getName() + " has " + getMoney() + " amount of money ");
+
+        if(getMoney()<=0){
+            bankrupt();
+            System.out.println(" " + getName() + " went bankrupt and cannot continue the game!!!");
+        }
     }
 
     public Square getLocation(){
@@ -51,15 +69,20 @@ public class Player {
 
 
     public int increaseMoney(int money){
-        int newMoney = this.money + money;
-        this.money = newMoney;
+        this.money += money;
         return this.money;
     }
 
-    /*public int decreaseMoney(int money){
-        int dereasedMoney = this.getMoney()-money;
-        this.getMoney() =
-        return oldMoney-money;
-    }*/
+    public int decreaseMoney(int money){
+        this.money -= money;
+        return this.money;
+    }
 
+    public boolean getStatus(){
+        return this.isActive;
+    }
+
+    public void bankrupt(){
+       this.isActive=false;
+    }
 }

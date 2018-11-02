@@ -11,14 +11,17 @@ public class Board {
 	public Board(){
 		
 		board = new ArrayList<>(SIZE);
-		Square square = new Square("GO ", 0);
-		board.add(square);
-		
-		for(int i=1; i<SIZE; i++){	
+
+		for(int i=0; i<SIZE; i++){
 			Square square2 = new Square("Square "+i, i);
 			board.add(square2);		
 		}
-		
+
+		board.get(0).setName("Go");
+		board.get(4).setName("Income Tax");
+		board.get(38).setName("Super Tax");
+		board.get(30).setName("Go to Jail");
+		board.get(10).setName("Jail");
 	}
 
 	public Square getSquare(int index){
