@@ -5,12 +5,13 @@ public class Player {
     private Pawn pawn;
     private Die[] dice;
 
-    //private int money;
+    private int money;
 
     public Player(String name, Die[] dice, Board board){
         this.setName(name);
         this.dice = dice;
         this.pawn = new Pawn(board);
+        this.money = 1500;
     }
 
     public void playTurn(){
@@ -27,6 +28,7 @@ public class Player {
         Square newLocation = pawn.move(oldLocation, value1+value2);
         this.pawn.setLocation(newLocation);
         System.out.println(" New location is: " + getLocation().getIndex());
+        System.out.println(" "+getName()+" has "+ getMoney()+" amount of money \n");
     }
 
     public Square getLocation(){
@@ -42,5 +44,22 @@ public class Player {
     }
 
 
+
+    public int getMoney(){
+        return this.money;
+    }
+
+
+    public int increaseMoney(int money){
+        int newMoney = this.money + money;
+        this.money = newMoney;
+        return this.money;
+    }
+
+    /*public int decreaseMoney(int money){
+        int dereasedMoney = this.getMoney()-money;
+        this.getMoney() =
+        return oldMoney-money;
+    }*/
 
 }
