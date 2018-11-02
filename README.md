@@ -1,7 +1,7 @@
 # cse3063f18p1_dagurzihin_mahakkoz_ekundakcioglu
 ## MONOPOLY GAME
 
-Deniz Arda Gürzihin  
+150116065 Deniz Arda Gürzihin  
 150117509 Mustafa Abdullah Hakkoz  
 Erman Kundakcıoğlu  
 
