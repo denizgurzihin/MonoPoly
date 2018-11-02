@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Monopoly {
     private static final int TOTAL_ROUNDS = 10;
 
-
+//gygbytby
     public static void main(String[] args) {
         Board board = new Board();
         Die[] dice = new Die[2];
