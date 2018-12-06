@@ -1,5 +1,5 @@
 
-public class Square {
+public abstract class Square {
 	
 	private String name;
 	private int index;
@@ -20,4 +20,7 @@ public class Square {
 	public int getIndex(){
 		return this.index;
 	}
+
+	//abstract method overridden by subclasses to define what to do when pawn arrives a specific square
+	public abstract void landedOn(Player player);
 }
