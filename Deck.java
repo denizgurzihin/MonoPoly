@@ -12,7 +12,7 @@ public class Deck {
 
         //build deck
         for(int i=0; i<SIZE; i++){
-            Card card = new RegularCard("Card "+i, i);
+            Card card = new RegularCard("Card "+i, "");
             deck.add(card);
         }
 
