@@ -57,6 +57,10 @@ public class Player {
         return name;
     }
 
+    public Pawn getPawn() {
+        return pawn;
+    }
+
     public void setName(String name){
         this.name = name;
     }
@@ -78,7 +82,7 @@ public class Player {
         return this.money;
     }
 
-    public boolean getStatus(){
+    public boolean getActivityStatus(){
         return this.isActive;
     }
 
