@@ -11,7 +11,7 @@
 
 - **Requirement Analysis Document:** [cse3063F18P1_RAD_dagurzihin_mahakkoz_ekundakcioglu_iteration1.pdf](https://github.com/denizgurzihin/cse3063f18p1_dagurzihin_mahakkoz_ekundakcioglu/blob/master/cse3063F18P1_RAD_dagurzihin_mahakkoz_ekundakcioglu_iteration1.pdf)  
 - **Domain Model:** [cse3063F18P1_DOMAINMODEL_dagurzihin_mahakkoz_ekundakcioglu_iteration1.pdf](https://github.com/denizgurzihin/cse3063f18p1_dagurzihin_mahakkoz_ekundakcioglu/blob/master/cse3063F18P1_DOMAINMODEL_dagurzihin_mahakkoz_ekundakcioglu_iteration1.pdf)  
-- **UML Class Diagram:** [CSE3063F18P1_DCD_dagurzihin_mahakkoz_ekundakcioglu.pdf](https://github.com/denizgurzihin/cse3063f18p1_dagurzihin_mahakkoz_ekundakcioglu/blob/master/CSE3063F18P1_DCD_dagurzihin_mahakkoz_ekundakcioglu.pdf)  
+- **UML Class Diagram:** [CSE3063F18P1_DCD_dagurzihin_mahakkoz_ekundakcioglu_iteration1.pdf](https://github.com/denizgurzihin/cse3063f18p1_dagurzihin_mahakkoz_ekundakcioglu/blob/master/CSE3063F18P1_DCD_dagurzihin_mahakkoz_ekundakcioglu_iteration1.pdf)  
 - **UML Sequence Diagram:** [cse3063F18P1_DSD_dagurzihin_mahakkoz_ekundakcioglu_iteration1.pdf](https://github.com/denizgurzihin/cse3063f18p1_dagurzihin_mahakkoz_ekundakcioglu/blob/master/cse3063F18P1_DSD_dagurzihin_mahakkoz_ekundakcioglu_iteration1.pdf)  
 - **Main class:** [Monopoly.java](https://github.com/denizgurzihin/cse3063f18p1_dagurzihin_mahakkoz_ekundakcioglu/blob/master/Monopoly.java)  
 
