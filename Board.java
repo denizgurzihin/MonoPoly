@@ -7,14 +7,16 @@ public class Board {
 	public static final int SIZE=40;
 	
 	private List<Square> board;
+
 	
 	public Board(){
 		
 		board = new ArrayList<>(SIZE);
 
+		//build board
 		for(int i=0; i<SIZE; i++){
-			Square square2 = new Square("Square "+i, i);
-			board.add(square2);		
+			Square square = new RegularSquare("Square "+i, i);
+			board.add(square);
 		}
 
 		board.get(0).setName("Go");
