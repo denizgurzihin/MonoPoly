@@ -1,8 +1,8 @@
-public class moveToSquareCard extends Card {
+public class MoveToSquareCard extends Card {
 
     private Square location;
 
-    public moveToSquareCard(String name, String explanation,Square location){
+    public MoveToSquareCard(String name, String explanation,Square location){
         super(name,explanation);
         this.location = location;
 
