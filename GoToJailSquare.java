@@ -9,5 +9,6 @@ public class GoToJailSquare extends Square {
     @Override
     public void landedOn(Player player) {
         player.getPawn().setLocation(jail);
+        player.setJailStatus(true);
     }
 }

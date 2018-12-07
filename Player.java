@@ -6,6 +6,8 @@ public class Player {
     private Die[] dice;
     private int money;
     private boolean isActive;
+    private boolean isInJail;
+    private int jailRounds=0;
 
     public Player(String name, Die[] dice, Board board){
         this.setName(name);
@@ -25,27 +27,30 @@ public class Player {
         int value2=dice[1].getValue();
         System.out.println(" Second die rolled:" + value2);
 
-        Square oldLocation = getLocation();
-        Square newLocation = pawn.move(oldLocation, value1+value2);
-        this.pawn.setLocation(newLocation);
-        System.out.println(" New location is: " + getLocation().getIndex());
+        if(this.isInJail!=true) {
+            Square oldLocation = getLocation();
+            Square newLocation = pawn.move(oldLocation, value1 + value2);
+            this.pawn.setLocation(newLocation);
+            System.out.println(" New location is: " + getLocation().getIndex());
 
-        if(oldLocation.getIndex() >= newLocation.getIndex()) {
-            increaseMoney(200);
-        }
 
-        if(newLocation.getName()=="Income Tax"){
-            decreaseMoney(1500);
-        }
+            if (oldLocation.getIndex() >= newLocation.getIndex()) {
+                increaseMoney(200);
+            }
 
-        if(newLocation.getName()=="Super Tax"){
-            decreaseMoney(1000);
-        }
-        System.out.println(" " + getName() + " has " + getMoney() + " amount of money ");
+            if (newLocation.getName() == "Income Tax") {
+                decreaseMoney(1500);
+            }
 
-        if(getMoney()<=0){
-            bankrupt();
-            System.out.println(" " + getName() + " went bankrupt and cannot continue the game!!!");
+            if (newLocation.getName() == "Super Tax") {
+                decreaseMoney(1000);
+            }
+            System.out.println(" " + getName() + " has " + getMoney() + " amount of money ");
+
+            if (getMoney() <= 0) {
+                bankrupt();
+                System.out.println(" " + getName() + " went bankrupt and cannot continue the game!!!");
+            }
         }
     }
 
@@ -57,15 +62,17 @@ public class Player {
         return name;
     }
 
-    public Pawn getPawn() {
-        return pawn;
-    }
-
     public void setName(String name){
         this.name = name;
     }
 
+    public Pawn getPawn() {
+        return pawn;
+    }
 
+    public Die[] getDice() {
+        return dice;
+    }
 
     public int getMoney(){
         return this.money;
@@ -88,5 +95,19 @@ public class Player {
 
     public void bankrupt(){
        this.isActive=false;
+    }
+
+    public boolean getJailStatus(){return this.isInJail;}
+
+    public void setJailStatus(boolean status) {
+        this.isInJail = status;
+    }
+
+    public int getJailRounds() {
+        return jailRounds;
+    }
+
+    public void setJailRounds(int jailRounds) {
+        this.jailRounds = jailRounds;
     }
 }
