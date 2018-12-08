@@ -2,6 +2,7 @@
 public class Pawn {
     private String name;
     private Square location;
+    private Square oldLocation;
     private Board board;
 
     public Pawn(Board board){
@@ -28,5 +29,13 @@ public class Pawn {
 
     public void setLocation(Square location){
         this.location=location;
+    }
+
+    public Square getOldLocation() {
+        return oldLocation;
+    }
+
+    public void setOldLocation(Square oldLocation) {
+        this.oldLocation = oldLocation;
     }
 }

@@ -5,25 +5,106 @@ import java.util.List;
 
 public class Board {
 	public static final int SIZE=40;
-	
 	private List<Square> board;
 
+	public enum SquareNames {
+		Go(0),
+		MediterraneanAvenue(1),
+		CommunityChest1(2),
+		BalticAvenue(3),
+		IncomeTax(4),
+		ReadingRailroad(5),
+		OrientalAvenue(6),
+		Chance1(7),
+		VermontAvenue(8),
+		ConnecticutAvenue(9),
+		Jail(10),
+		StCharlesPlace(11),
+		ElectricCompany(12),
+		StatesAvenue(13),
+		VirginiaAvenue(14),
+		PennsylvaniaRailroad(15),
+		StJamesPlace(16),
+		CommunityChest2(17),
+		TennesseeAvenue(18),
+		NewYorkAvenue(19),
+		FreeParking(20),
+		KentuckyAvenue(21),
+		Chance2(22),
+		IndianaAvenue(23),
+		IllnoisAvenue(24),
+		BORailroad(25),
+		AtlanticAvenue(26),
+		VentnorAvenue(27),
+		WaterWorks(28),
+		MarvinGardens(29),
+		GoToJail(30),
+		PacificAvenue(31),
+		NorthCarolinaAvenue(32),
+		CommunityChest3(33),
+		PennsylvaniaAvenue(34),
+		ShortLineRailroad(35),
+		Chance3(36),
+		ParkPlace(37),
+		LuxuryTax(38),
+		Boardwalk(39);
+
+		private final int SquareCode;
+		private SquareNames(int SquareCode) {
+			this.SquareCode = SquareCode;
+		}
+		public int getValue() {
+			return SquareCode;
+		}
+	}
+
 	
-	public Board(){
+	public Board(Deck communityChestDeck, Deck chanceDeck){
 		
 		board = new ArrayList<>(SIZE);
 
 		//build board
-		for(int i=0; i<SIZE; i++){
-			Square square = new RegularSquare("Square "+i, i);
-			board.add(square);
+		for(SquareNames squareName : SquareNames.values()) {
+			Square square;
+
+			if (squareName == SquareNames.Go) {
+				square = new GoSquare(squareName.toString(), squareName.getValue(), 200);
+				board.add(squareName.getValue(), square);
+			}
+			if (squareName == SquareNames.IncomeTax) {
+				square = new TaxSquare(squareName.toString(), squareName.getValue(), 200);
+				board.add(squareName.getValue(), square);
+			}
+			if (squareName == SquareNames.LuxuryTax) {
+				square = new TaxSquare(squareName.toString(), squareName.getValue(), 100);
+				board.add(squareName.getValue(), square);
+			}
+			if (squareName == SquareNames.Jail) {
+				square = new JailSquare(squareName.toString(), squareName.getValue(), 50);
+				board.add(squareName.getValue(), square);
+			}
+			//GoToJailSquare class needs Jail square to get initialized before
+			if (squareName == SquareNames.GoToJail){
+				square = new GoToJailSquare(squareName.toString(), squareName.getValue(), (JailSquare) board.get(10));
+				board.add(squareName.getValue(), square);
+			}
+
+			if (squareName == SquareNames.CommunityChest1 || squareName == SquareNames.CommunityChest2 || squareName == SquareNames.CommunityChest3){
+				square = new DrawCardSquare(squareName.toString(), squareName.getValue(), communityChestDeck);
+				board.add(squareName.getValue(), square);
+			}
+
+			if (squareName == SquareNames.Chance1 || squareName == SquareNames.Chance2 || squareName == SquareNames.Chance3){
+				square = new DrawCardSquare(squareName.toString(), squareName.getValue(), chanceDeck);
+				board.add(squareName.getValue(), square);
+			}
+			else{
+				square = new RegularSquare(squareName.toString(), squareName.getValue());
+				board.add(squareName.getValue(), square);
+			}
 		}
 
-		board.get(0).setName("Go");
-		board.get(4).setName("Income Tax");
-		board.get(38).setName("Super Tax");
-		board.get(30).setName("Go to Jail");
-		board.get(10).setName("Jail");
+
 	}
 
 	public Square getSquare(int index){

@@ -4,10 +4,11 @@ import java.util.List;
 public class Deck {
     public static final int SIZE = 16;
     private String name;
-
+    private Card topCard;
     private List<Card> deck;
 
-    public Deck() {
+    public Deck(String name) {
+        this.name=name;
         deck = new ArrayList<>(SIZE);
 
         //build deck
@@ -20,13 +21,21 @@ public class Deck {
 
     }
 
-    public Card getCard(){
+    public Card drawCard(){
         //pull card
         //send it bottom
-        return newCard;
+        //set topCard
     }
 
     public void Shuffle(){
         //shuffle deck
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Card getTopCard() {
+        return topCard;
     }
 }

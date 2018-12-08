@@ -1,5 +1,5 @@
 public class RegularCard extends Card {
-    RegularCard(String name, String explanation){
+    public RegularCard(String name, String explanation){
         super(name, explanation);
     }
 

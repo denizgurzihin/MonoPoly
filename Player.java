@@ -28,23 +28,14 @@ public class Player {
         System.out.println(" Second die rolled:" + value2);
 
         if(this.isInJail!=true) {
-            Square oldLocation = getLocation();
-            Square newLocation = pawn.move(oldLocation, value1 + value2);
+            this.pawn.setOldLocation(getLocation());               //this line added to retreive pawn.oldLocation value in GoSquare class
+            Square newLocation = pawn.move(this.pawn.getOldLocation(), value1 + value2);
             this.pawn.setLocation(newLocation);
-            System.out.println(" New location is: " + getLocation().getIndex());
+            System.out.println(" New location is: " + getLocation().getName());
 
+            //implement landedOn method of newLocation
+            newLocation.landedOn(this);
 
-            if (oldLocation.getIndex() >= newLocation.getIndex()) {
-                increaseMoney(200);
-            }
-
-            if (newLocation.getName() == "Income Tax") {
-                decreaseMoney(1500);
-            }
-
-            if (newLocation.getName() == "Super Tax") {
-                decreaseMoney(1000);
-            }
             System.out.println(" " + getName() + " has " + getMoney() + " amount of money ");
 
             if (getMoney() <= 0) {

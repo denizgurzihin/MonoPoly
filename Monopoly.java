@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Monopoly {
 
     public static void main(String[] args) {
-        Board board = new Board();
+        Deck chanceDeck = new Deck("Chance");
+        Deck communityChestDeck = new Deck("Community Chest");
+        Board board = new Board(communityChestDeck,chanceDeck);
         Die[] dice = new Die[2];
         for(int i=0; i<2; i++)
             dice[i] = new Die();

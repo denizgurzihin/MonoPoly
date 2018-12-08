@@ -1,16 +1,14 @@
 public class TaxSquare extends Square{
     private int taxAmount;
 
-    TaxSquare(String name, int location){
+    public TaxSquare(String name, int location,int taxAmount){
         super(name, location);
-    }
-
-    public void setTaxAmount(int taxAmount) {
-        this.taxAmount = taxAmount;
+        this.taxAmount=taxAmount;
     }
 
     @Override
     public void landedOn(Player player) {
         player.decreaseMoney(taxAmount);
+        System.out.println(" " + player.getName() + " paid"+taxAmount+" for taxes.");
     }
 }

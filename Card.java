@@ -7,5 +7,15 @@ public abstract class Card {
         this.explanation = explanation;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getExplanation() {
+        return explanation;
+    }
+
+
+
     public abstract void action(Player player);
 }

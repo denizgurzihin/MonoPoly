@@ -1,16 +1,16 @@
 public class GoSquare extends Square {
     private int roundPrize;
 
-    GoSquare(String name, int location){
+    public GoSquare(String name, int location, int roundPrize){
         super(name, location);
-    }
-
-    public void setRoundPrize(int roundPrize) {
-        this.roundPrize = roundPrize;
+        this.roundPrize=roundPrize;
     }
 
     @Override
     public void landedOn(Player player) {
-        player.increaseMoney(roundPrize);
+        if (player.getPawn().getOldLocation().getIndex() >= player.getPawn().getLocation().getIndex()) {
+            player.increaseMoney(200);
+            System.out.println(" " + player.getName() + " collects 200$ for passing Go Square");
+        }
     }
 }
