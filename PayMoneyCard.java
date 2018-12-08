@@ -2,8 +2,8 @@ public class PayMoneyCard extends Card {
 
     private int amount;
 
-    public PayMoneyCard(String name, String explanation, int amount){
-        super(name,explanation);
+    public PayMoneyCard(String explanation, int amount){
+        super(explanation);
         this.amount = amount;
     }
 

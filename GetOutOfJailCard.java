@@ -1,12 +1,12 @@
 public class GetOutOfJailCard extends Card{
 
 
- public GetOutOfJailCard(String name, String explanation){
-     super(name,explanation);
+ public GetOutOfJailCard(String explanation){
+     super(explanation);
  }
 
     @Override
     public void action(Player player) {
-
+        //empty
     }
 }

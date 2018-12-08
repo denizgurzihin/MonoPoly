@@ -31,6 +31,10 @@ public class Pawn {
         this.location=location;
     }
 
+    public void setLocation(int locationIndex){
+        this.location=this.board.getSquare(locationIndex);
+    }
+
     public Square getOldLocation() {
         return oldLocation;
     }

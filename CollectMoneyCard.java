@@ -2,8 +2,8 @@ public class CollectMoneyCard extends Card{
 
     private int amount;
 
-    public CollectMoneyCard(String name, String explanation, int amount){
-        super(name,explanation);
+    public CollectMoneyCard(String explanation, int amount){
+        super(explanation);
         this.amount = amount;
     }
 
@@ -11,10 +11,5 @@ public class CollectMoneyCard extends Card{
     public void action(Player player) {
        player.increaseMoney(amount);
     }
-
-
-
-
-
 
 }

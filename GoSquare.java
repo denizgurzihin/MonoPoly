@@ -9,7 +9,7 @@ public class GoSquare extends Square {
     @Override
     public void landedOn(Player player) {
         if (player.getPawn().getOldLocation().getIndex() >= player.getPawn().getLocation().getIndex()) {
-            player.increaseMoney(200);
+            player.increaseMoney(roundPrize);
             System.out.println(" " + player.getName() + " collects 200$ for passing Go Square");
         }
     }

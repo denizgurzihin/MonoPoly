@@ -59,7 +59,7 @@ public class Board {
 	}
 
 	
-	public Board(Deck communityChestDeck, Deck chanceDeck){
+	public Board(CommunityChestDeck communityChestDeck, ChanceDeck chanceDeck){
 		
 		board = new ArrayList<>(SIZE);
 

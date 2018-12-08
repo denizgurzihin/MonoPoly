@@ -1,6 +1,6 @@
 public class RegularCard extends Card {
-    public RegularCard(String name, String explanation){
-        super(name, explanation);
+    public RegularCard(String explanation){
+        super(explanation);
     }
 
     @Override
