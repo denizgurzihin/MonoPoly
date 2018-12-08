@@ -1,7 +1,7 @@
 public class GoToJailSquare extends Square {
-    private JailSquare jail;
+    private Square jail;
 
-    public GoToJailSquare(String name, int location, JailSquare jail){ //Jailsiz şekliyle bi dene
+    public GoToJailSquare(String name, int location, Square jail){
         super(name, location);
         this.jail=jail;
     }

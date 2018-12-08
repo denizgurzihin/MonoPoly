@@ -62,14 +62,5 @@ public class Monopoly {
 
         currentPlayers.forEach(p -> System.out.print("\n********** WINNER IS : " + p.getName() + "!!! **********"));
     }
-
-    public void buildDecks(CommunityChestDeck communityChestDeck,ChanceDeck chanceDeck,Board board,ArrayList<Player> currentPlayers){
-
-
-        //set current player count for some CollectMoneyCard
-        int currentPlayerCount=currentPlayers.size();
-
-    }
-
 }
 

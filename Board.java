@@ -85,7 +85,7 @@ public class Board {
 			}
 			//GoToJailSquare class needs Jail square to get initialized before
 			if (squareName == SquareNames.GoToJail){
-				square = new GoToJailSquare(squareName.toString(), squareName.getValue(), (JailSquare) board.get(10));
+				square = new GoToJailSquare(squareName.toString(), squareName.getValue(), board.get(10));
 				board.add(squareName.getValue(), square);
 			}
 
