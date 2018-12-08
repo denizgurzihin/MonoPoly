@@ -7,7 +7,7 @@
 
 
 
-## second iteration: 02.11.2018
+## second iteration: 08.12.2018
  
 - **Domain Model:** [CSE3063F18P1_DOMAINMODEL_dagurzihin_mahakkoz_ekundakcioglu_iteration2.pdf](https://github.com/denizgurzihin/cse3063f18p1_dagurzihin_mahakkoz_ekundakcioglu/blob/master/iteration2/cse3063F18P1_DOMAINMODEL_dagurzihin_mahakkoz_ekundakcioglu_iteration2.pdf)  
 - **UML Class Diagram:** [CSE3063F18P1_DCD_dagurzihin_mahakkoz_ekundakcioglu_iteration2.pdf](https://github.com/denizgurzihin/cse3063f18p1_dagurzihin_mahakkoz_ekundakcioglu/blob/master/iteration2/CSE3063F18P1_DCD_dagurzihin_mahakkoz_ekundakcioglu_iteration2.pdf)  
