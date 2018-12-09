@@ -43,7 +43,7 @@ public class Monopoly {
         while(currentPlayers.size() >= 2){
             System.out.println(" \n");
             System.out.println("ROUND: " + (roundCounter++));
-            for(int j=0; j<totalPlayer && currentPlayers.get(j).getStatus(); j++) {
+            for(int j=0; j<currentPlayers.size() && currentPlayers.get(j).getStatus(); j++) {
                 currentPlayers.get(j).playTurn();
                 currentPlayers.removeIf(p -> p.getStatus() == false);
             }
