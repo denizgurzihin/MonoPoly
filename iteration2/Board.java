@@ -65,44 +65,44 @@ public class Board {
 
 		//build board
 		for(SquareNames squareName : SquareNames.values()) {
-			Square square;
 
 			if (squareName == SquareNames.Go) {
-				square = new GoSquare(squareName.toString(), squareName.getValue(), 200);
+				Square square = new GoSquare(squareName.toString(), squareName.getValue(), 200);
 				board.add(squareName.getValue(), square);
 			}
-			if (squareName == SquareNames.IncomeTax) {
-				square = new TaxSquare(squareName.toString(), squareName.getValue(), 200);
+			else if (squareName == SquareNames.IncomeTax) {
+				Square square = new TaxSquare(squareName.toString(), squareName.getValue(), 200);
 				board.add(squareName.getValue(), square);
 			}
-			if (squareName == SquareNames.LuxuryTax) {
-				square = new TaxSquare(squareName.toString(), squareName.getValue(), 100);
+			else if (squareName == SquareNames.LuxuryTax) {
+				Square square = new TaxSquare(squareName.toString(), squareName.getValue(), 100);
 				board.add(squareName.getValue(), square);
 			}
-			if (squareName == SquareNames.Jail) {
-				square = new JailSquare(squareName.toString(), squareName.getValue(), 50);
+			else if (squareName == SquareNames.Jail) {
+				Square square = new JailSquare(squareName.toString(), squareName.getValue(), 100);
 				board.add(squareName.getValue(), square);
 			}
 			//GoToJailSquare class needs Jail square to get initialized before
-			if (squareName == SquareNames.GoToJail){
-				square = new GoToJailSquare(squareName.toString(), squareName.getValue(), board.get(10));
+			else if (squareName == SquareNames.GoToJail){
+				Square square = new GoToJailSquare(squareName.toString(), squareName.getValue(), board.get(10));
 				board.add(squareName.getValue(), square);
 			}
 
-			if (squareName == SquareNames.CommunityChest1 || squareName == SquareNames.CommunityChest2 || squareName == SquareNames.CommunityChest3){
-				square = new DrawCardSquare(squareName.toString(), squareName.getValue(), communityChestDeck);
+			else if (squareName == SquareNames.CommunityChest1 || squareName == SquareNames.CommunityChest2 || squareName == SquareNames.CommunityChest3){
+				Square square = new DrawCardSquare(squareName.toString(), squareName.getValue(), communityChestDeck);
 				board.add(squareName.getValue(), square);
 			}
 
-			if (squareName == SquareNames.Chance1 || squareName == SquareNames.Chance2 || squareName == SquareNames.Chance3){
-				square = new DrawCardSquare(squareName.toString(), squareName.getValue(), chanceDeck);
+			else if (squareName == SquareNames.Chance1 || squareName == SquareNames.Chance2 || squareName == SquareNames.Chance3){
+				Square square = new DrawCardSquare(squareName.toString(), squareName.getValue(), chanceDeck);
 				board.add(squareName.getValue(), square);
 			}
 			else{
-				square = new RegularSquare(squareName.toString(), squareName.getValue());
+				Square square = new RegularSquare(squareName.toString(), squareName.getValue());
 				board.add(squareName.getValue(), square);
 			}
 		}
+
 
 
 	}

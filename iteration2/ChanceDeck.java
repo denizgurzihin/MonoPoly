@@ -51,7 +51,7 @@ public class ChanceDeck implements DeckInterface {
         this.chanceDeck.add(card17);
     }
 
-    public Card drawCard(){
+    public void drawCard(){
         //draw card and set it to topCard
         this.topCard=this.chanceDeck.get(DeckInterface.SIZE-1);
         //send it bottom
@@ -60,11 +60,9 @@ public class ChanceDeck implements DeckInterface {
             this.chanceDeck.set(DeckInterface.SIZE-1-i,this.chanceDeck.get(DeckInterface.SIZE-2-i));
         }
         this.chanceDeck.set(0,tempCard);
-        //return topCard
-        return this.topCard;
     }
 
-    public void Shuffle(){
+    public void shuffle(){
         //shuffle deck
         Random rand = new Random();
         //Generate two random numbers between 0 to DeckInterface.SIZE

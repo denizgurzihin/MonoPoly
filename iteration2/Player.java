@@ -7,7 +7,7 @@ public class Player {
     private int money;
     private boolean isActive;
     private boolean isInJail;
-    private int jailRounds=0;
+    private int jailRounds;
 
     public Player(String name, Die[] dice, Board board){
         this.setName(name);
@@ -15,21 +15,26 @@ public class Player {
         this.pawn = new Pawn(board);
         this.money = 1500;
         this.isActive = true;
+        this.isInJail = false;
+        this.jailRounds = 0;
     }
 
     public void playTurn(){
         System.out.println("\n" + name + " is playing his turn...");
 
         dice[0].rollDice();
-        int value1=dice[0].getValue();
-        System.out.println(" First die rolled: " + value1);
+        int val1=dice[0].getValue();
+        System.out.println(" First die rolled: " + val1);
         dice[1].rollDice();
-        int value2=dice[1].getValue();
-        System.out.println(" Second die rolled:" + value2);
+        int val2=dice[1].getValue();
+        System.out.println(" Second die rolled:" + val2);
 
-        if(this.isInJail!=true) {
+        if(this.isInJail==true)
+            pawn.getLocation().landedOn(this);
+
+        if(this.isInJail==false) {
             this.pawn.setOldLocation(getLocation());               //this line added to retreive pawn.oldLocation value in GoSquare class
-            Square newLocation = pawn.move(this.pawn.getOldLocation(), value1 + value2);
+            Square newLocation = pawn.move(this.pawn.getOldLocation(), val1 + val2);
             this.pawn.setLocation(newLocation);
             System.out.println(" New location is: " + getLocation().getName());
 
@@ -43,6 +48,7 @@ public class Player {
                 System.out.println(" " + getName() + " went bankrupt and cannot continue the game!!!");
             }
         }
+
     }
 
     public Square getLocation(){

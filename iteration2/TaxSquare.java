@@ -9,6 +9,6 @@ public class TaxSquare extends Square{
     @Override
     public void landedOn(Player player) {
         player.decreaseMoney(taxAmount);
-        System.out.println(" " + player.getName() + " paid"+taxAmount+" for taxes.");
+        System.out.println(" " + player.getName() + " paid "+taxAmount+" for taxes.");
     }
 }

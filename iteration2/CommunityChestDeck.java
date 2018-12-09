@@ -52,7 +52,7 @@ public class CommunityChestDeck implements DeckInterface {
 
     }
 
-    public Card drawCard(){
+    public void drawCard(){
         //draw card and set it to topCard
         this.topCard=this.communityChestDeck.get(DeckInterface.SIZE-1);
         //send it bottom
@@ -61,11 +61,9 @@ public class CommunityChestDeck implements DeckInterface {
             this.communityChestDeck.set(DeckInterface.SIZE-1-i,this.communityChestDeck.get(DeckInterface.SIZE-2-i));
         }
         this.communityChestDeck.set(0,tempCard);
-        //return topCard
-        return this.topCard;
     }
 
-    public void Shuffle(){
+    public void shuffle(){
         //shuffle deck
         Random rand = new Random();
         //Generate two random numbers between 0 to DeckInterface.SIZE

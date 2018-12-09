@@ -8,8 +8,9 @@ public class DrawCardSquare extends Square {
 
     @Override
     public void landedOn(Player player) {
-        deck.drawCard().action(player);
         System.out.println(" " + player.getName() + " draws card from :"+ deck.getName());
+        deck.drawCard();
         System.out.println("  " + deck.getTopCard().getExplanation());
+        deck.getTopCard().action(player);
     }
 }

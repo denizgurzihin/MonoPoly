@@ -1,14 +1,14 @@
 public class GoToJailSquare extends Square {
-    private Square jail;
+    private Square jailLocation;
 
-    public GoToJailSquare(String name, int location, Square jail){
+    public GoToJailSquare(String name, int location, Square jailLocation){
         super(name, location);
-        this.jail=jail;
+        this.jailLocation=jailLocation;
     }
 
     @Override
     public void landedOn(Player player) {
-        player.getPawn().setLocation(jail);
+        player.getPawn().setLocation(jailLocation);
         player.setJailStatus(true);
         System.out.println(" " + player.getName() + " went to Jail.");
     }

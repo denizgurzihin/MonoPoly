@@ -1,10 +1,10 @@
 public interface DeckInterface {
     int SIZE = 17;
     //draw a card set it to topCard attribute
-    Card drawCard();
+    void drawCard();
 
     //shuffle deck
-    void Shuffle();
+    void shuffle();
 
     //get deck name
     String getName();
